@@ -1,10 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Root from 'pages/Root'
+import { ThemeModeProvider } from 'context/ThemeContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <Root />
+    <ThemeModeProvider>
+      <Root />
+    </ThemeModeProvider>
   </React.StrictMode>,
   document.getElementById('root')
 )

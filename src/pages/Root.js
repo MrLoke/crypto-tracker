@@ -1,8 +1,11 @@
 import { lazy, Suspense } from 'react'
 import Navbar from 'components/Navbar/Navbar'
-import MobileMenu from 'components/MobileMenu/MobileMenu'
 import LoadingSpinner from 'components/LoadingSpinner/LoadingSpinner'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { Helmet } from 'react-helmet'
+import { ThemeProvider } from 'styled-components'
+import { theme } from 'theme/theme'
+import { GlobalStyle } from 'theme/GlobalStyles'
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'))
 const CurrencyPage = lazy(() => import('pages/CurrencyPage/CurrencyPage'))
@@ -23,7 +26,6 @@ const Root = () => {
         <Router>
           <Suspense fallback={<LoadingSpinner fullScreen />}>
             <Navbar />
-            <MobileMenu />
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route exact path='/currency/:name' component={CurrencyPage} />

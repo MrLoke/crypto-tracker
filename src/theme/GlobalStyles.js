@@ -15,6 +15,8 @@ export const GlobalStyle = createGlobalStyle`
 
   ${({ theme }) => css`
     body {
+      font-size: 1.7rem;
+      font-family: 'Roboto', sans-serif;
       background: ${theme.colors.bg};
       color: ${theme.colors.primaryText};
     }

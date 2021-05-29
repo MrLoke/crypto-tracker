@@ -6,12 +6,11 @@ export const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   padding: 0 1.5rem;
-  background-color: ${({ theme }) => theme.colors.primaryDarkBg};
+  background-color: ${({ theme }) => theme.colors.secondary};
   position: sticky;
   top: 0;
   left: 0;
   color: inherit;
-  z-index: 999;
   ${({ theme }) => theme.media.md} {
     justify-content: space-around;
   }
@@ -51,7 +50,7 @@ export const ListItem = styled.li`
   cursor: pointer;
   a {
     transition: all 0.2s linear;
-    color: ${({ theme }) => theme.colors.lightText};
+    color: ${({ theme }) => theme.colors.brand};
     text-decoration: none;
     background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 3px
       no-repeat;

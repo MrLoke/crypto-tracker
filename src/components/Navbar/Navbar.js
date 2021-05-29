@@ -1,3 +1,4 @@
+import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher'
 import { Link } from 'react-router-dom'
 import {
   Nav,
@@ -36,6 +37,7 @@ const Navbar = () => {
           </ListItem>
         </MenuList>
       </Menu>
+      <ThemeSwitcher />
     </Nav>
   )
 }

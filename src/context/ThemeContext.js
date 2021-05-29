@@ -1,17 +1,15 @@
 import { useState, useEffect, useContext, createContext } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { GlobalStyle } from 'theme/GlobalStyle'
+import { GlobalStyles } from 'theme/GlobalStyles'
 import { theme } from 'theme/theme'
 
 const ThemeContext = createContext()
-
-export const useTheme = useContext(ThemeContext)
 
 export const ThemeModeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(
     () => localStorage.getItem('theme') || 'lightTheme' // useState lazy initialization trick
   )
-  
+
   useEffect(() => {
     localStorage.setItem('theme', themeMode)
   }, [themeMode])
@@ -36,9 +34,13 @@ export const ThemeModeProvider = ({ children }) => {
   return (
     <ThemeContext.Provider value={value}>
       <ThemeProvider theme={customTheme}>
-        <GlobalStyle />
+        <GlobalStyles />
         {children}
       </ThemeProvider>
     </ThemeContext.Provider>
   )
+}
+
+export const useTheme = () => {
+  return useContext(ThemeContext)
 }

@@ -22,7 +22,6 @@ const Root = () => {
         />
       </Helmet>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
         <Router>
           <Suspense fallback={<LoadingSpinner fullScreen />}>
             <Navbar />

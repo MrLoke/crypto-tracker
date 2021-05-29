@@ -1,4 +1,4 @@
-import { useTheme } from 'context/themeContext'
+import { useTheme } from 'context/ThemeContext'
 import Switch from 'react-switch'
 import { FiSun } from 'react-icons/fi'
 import { FiMoon } from 'react-icons/fi'

@@ -3,7 +3,7 @@ export const theme = {
     colors: {
       bg: 'rgba(255, 255, 255)',
       brand: 'rgba(56, 97, 251)',
-      cardBg: 'rgba(245, 245, 245)',
+      cardBg: 'rgba(235, 235, 235)',
       primary: 'rgba(34, 37, 49)',
       secondary: 'rgba(23, 25, 36)',
       primaryText: 'rgba(10, 10, 10)',
@@ -15,8 +15,8 @@ export const theme = {
     colors: {
       bg: 'rgba(23, 23, 26)',
       brand: 'rgba(56, 97, 251)',
+      cardBg: 'rgba(23, 25, 36)',
       primary: 'rgba(34, 37, 49)',
-      secondary: 'rgba(23, 25, 36)',
       primaryText: 'rgba(245, 245, 245)',
       secondaryText: 'rgba(161, 167, 187)',
       tertiaryText: 'rgba(50, 53, 70)',

@@ -6,7 +6,7 @@ export const Nav = styled.nav`
   justify-content: center;
   align-items: center;
   padding: 0 1.5rem;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: ${({ theme }) => theme.colors.cardBg};
   position: sticky;
   top: 0;
   left: 0;
@@ -22,7 +22,7 @@ export const AppHeader = styled.h1`
   font-size: ${({ theme }) => theme.size.s};
   a {
     text-decoration: none;
-    color: #eee;
+    color: ${({ theme }) => theme.colors.primaryText};
   }
   ${({ theme }) => theme.media.sm} {
     font-size: ${({ theme }) => theme.size.m};
@@ -44,13 +44,14 @@ export const MenuList = styled.ul`
 
 export const ListItem = styled.li`
   padding: 1rem;
+  margin: 0 1rem;
   font-weight: 500;
   display: flex;
   align-items: center;
   cursor: pointer;
   a {
     transition: all 0.2s linear;
-    color: ${({ theme }) => theme.colors.brand};
+    color: ${({ theme }) => theme.colors.primaryText};
     text-decoration: none;
     background: linear-gradient(currentColor 0 0) bottom / var(--d, 0) 3px
       no-repeat;
@@ -59,7 +60,7 @@ export const ListItem = styled.li`
   }
   &:hover {
     a {
-      color: ${({ theme }) => theme.colors.accent};
+      color: ${({ theme }) => theme.colors.brand};
       --d: 100%;
     }
   }

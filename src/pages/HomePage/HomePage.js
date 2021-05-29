@@ -1,9 +1,10 @@
+import {Container} from './HomePageStyled'
 
 const HomePage = () => {
   return (
-    <div>
-      
-    </div>
+    <Container>
+      <div></div>
+    </Container>
   )
 }
 

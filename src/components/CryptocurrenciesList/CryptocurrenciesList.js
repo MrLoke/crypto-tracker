@@ -1,20 +1,12 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
-import { AiOutlineCaretDown } from 'react-icons/ai'
-import { AiOutlineCaretUp } from 'react-icons/ai'
-import { AiOutlineStar } from 'react-icons/ai'
-import { useSelect, useCombobox } from 'downshift'
 import { useAppContext } from 'context/AppContext'
+import CoinDetail from 'components/CoinDetail/CoinDetail'
 import {
   Container,
   CoinNav,
-  CoinDetail,
   CoinNavItem,
-  Rank,
-  CoinImg,
-  CoinInfo,
-  CoinPercentage,
 } from './CryptocurrenciesListStyled'
 
 const fetchCryptocurrencies = async (page = 1, currency) => {
@@ -104,56 +96,16 @@ const CryptocurrenciesList = () => {
         ) : isError ? (
           <div>Error: {error.message}</div>
         ) : (
-          <div style={{width: '100%'}}>
+          <div style={{ width: '100%' }}>
             <CoinNav>
               <CoinNavItem>Name</CoinNavItem>
               <CoinNavItem>Price</CoinNavItem>
-              <CoinNavItem>24H Change</CoinNavItem>
-              <CoinNavItem>24H Volume</CoinNavItem>
-              <CoinNavItem>Market Cup</CoinNavItem>
+              <CoinNavItem mobileHidden>24H Change</CoinNavItem>
+              <CoinNavItem mobileHidden>24H Volume</CoinNavItem>
+              <CoinNavItem mobileHidden>Market Cup</CoinNavItem>
             </CoinNav>
             {data.map((coin) => (
-              <CoinDetail key={coin.id}>
-                  <AiOutlineStar size='2.5rem' />
-                  <Rank>{coin.market_cap_rank}</Rank>
-                  <CoinImg src={coin.image} alt='' width='60' height='60' />
-                <CoinInfo>
-                  {coin.name}, {coin.symbol.toUpperCase()}
-                </CoinInfo>
-                  <CoinInfo>
-                    {coin.current_price.toLocaleString('en-EN', {
-                      style: 'currency',
-                      currency: currency,
-                    })}
-                  </CoinInfo>
-                  {coin.price_change_percentage_24h < 0 ? (
-                    <CoinInfo>
-                      <CoinPercentage>
-                        <AiOutlineCaretDown size='2rem' />
-                        {coin.price_change_percentage_24h.toFixed(2)}%
-                      </CoinPercentage>
-                    </CoinInfo>
-                  ) : (
-                    <CoinInfo>
-                      <CoinPercentage isUp>
-                        <AiOutlineCaretUp size='2rem' />
-                        {coin.price_change_percentage_24h.toFixed(2)}%
-                      </CoinPercentage>
-                    </CoinInfo>
-                  )}
-                  <CoinInfo>
-                    {coin.total_volume.toLocaleString('en-EN', {
-                      style: 'currency',
-                      currency: currency,
-                    })}
-                  </CoinInfo>
-                  <CoinInfo>
-                    {coin.market_cap.toLocaleString('en-EN', {
-                      style: 'currency',
-                      currency: currency,
-                    })}
-                  </CoinInfo>
-              </CoinDetail>
+              <CoinDetail key={coin.id} coin={coin} />
             ))}
           </div>
         )}

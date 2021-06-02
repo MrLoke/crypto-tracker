@@ -9,6 +9,7 @@ import {
   CoinInfo,
   CoinPercentage,
 } from './CoinDetailStyled'
+import { Link } from 'react-router-dom'
 
 const CoinDetail = ({ coin }) => {
   const { currency } = useAppContext()
@@ -19,7 +20,9 @@ const CoinDetail = ({ coin }) => {
       <Rank>{coin.market_cap_rank}</Rank>
       <CoinImg src={coin.image} alt='' width='60' height='60' />
       <CoinInfo>
-        {coin.name}, {coin.symbol.toUpperCase()}
+        <Link to={`/coin/${coin.id}`}>
+          {coin.name}, {coin.symbol.toUpperCase()}
+        </Link>
       </CoinInfo>
       <CoinInfo>
         {coin.current_price.toLocaleString('en-EN', {

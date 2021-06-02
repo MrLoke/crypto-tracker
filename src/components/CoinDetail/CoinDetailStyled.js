@@ -28,6 +28,10 @@ export const CoinInfo = styled.span`
   margin: 0 2rem;
   width: 20%;
   display: ${({ mobileHidden }) => (mobileHidden ? 'none' : 'flex')};
+  a {
+    color: ${({ theme }) => theme.colors.primaryText};
+    text-decoration: none;
+  }
   ${({ theme }) => theme.media.md} {
     display: flex;
   }

@@ -1,9 +1,10 @@
+import CryptocurrenciesList from 'components/CryptocurrenciesList/CryptocurrenciesList'
 import {Container} from './HomePageStyled'
 
 const HomePage = () => {
   return (
     <Container>
-      <div></div>
+      <CryptocurrenciesList />
     </Container>
   )
 }

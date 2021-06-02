@@ -46,4 +46,6 @@ export const StyledSpinner = styled.svg`
 
 export const Heading = styled.h3`
   color: ${({ theme }) => theme.colors.secondaryText};
+  margin-top: 1rem;
+  text-align: center;
 `

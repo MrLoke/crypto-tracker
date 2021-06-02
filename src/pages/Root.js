@@ -5,7 +5,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { ThemeProvider } from 'styled-components'
 import { theme } from 'theme/theme'
-import { GlobalStyle } from 'theme/GlobalStyles'
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'))
 const CurrencyPage = lazy(() => import('pages/CurrencyPage/CurrencyPage'))

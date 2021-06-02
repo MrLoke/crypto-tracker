@@ -3,13 +3,13 @@ import styled from 'styled-components/macro'
 export const Nav = styled.nav`
   height: 60px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   padding: 0 1.5rem;
-  background-color: ${({ theme }) => theme.colors.cardBg};
-  position: sticky;
+  background-color: ${({ theme }) => theme.colors.primaryCardBg};
+  /* position: sticky;
   top: 0;
-  left: 0;
+  left: 0; */
   color: inherit;
   ${({ theme }) => theme.media.md} {
     justify-content: space-around;
@@ -18,8 +18,7 @@ export const Nav = styled.nav`
 
 export const AppHeader = styled.h1`
   text-decoration: line-through;
-  margin-left: 3rem;
-  font-size: ${({ theme }) => theme.size.s};
+  font-size: ${({ theme }) => theme.size.m};
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.primaryText};

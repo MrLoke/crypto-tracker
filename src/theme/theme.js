@@ -4,7 +4,7 @@ export const theme = {
       bg: 'rgba(255, 255, 255)',
       brand: 'rgba(56, 97, 251)',
       primaryCardBg: 'rgb(248, 250, 253)',
-      secondaryCardBg: 'rgba(235, 235, 235)',
+      secondaryCardBg: 'rgba(245, 245, 245)',
       primary: 'rgba(34, 37, 49)',
       secondary: 'rgba(23, 25, 36)',
       primaryText: 'rgba(10, 10, 10)',

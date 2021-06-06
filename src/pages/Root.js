@@ -8,6 +8,7 @@ import { theme } from 'theme/theme'
 
 const HomePage = lazy(() => import('pages/HomePage/HomePage'))
 const CoinPage = lazy(() => import('pages/CoinPage/CoinPage'))
+const WatchList = lazy(() => import('pages/WatchList/WatchList'))
 const NotFound = lazy(() => import('pages/NotFound/NotFound'))
 
 const Root = () => {
@@ -26,6 +27,7 @@ const Root = () => {
             <Navbar />
             <Switch>
               <Route exact path='/' component={HomePage} />
+              <Route exact path='/watchlist' component={WatchList} />
               <Route exact path='/coin/:id' component={CoinPage} />
               <Route exact path='*' component={NotFound} />
             </Switch>

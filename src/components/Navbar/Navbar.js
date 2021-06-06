@@ -25,7 +25,7 @@ const Navbar = () => {
             <Link to='/#'>NFT</Link>
           </ListItem>
           <ListItem>
-            <Link to='/#'>Watchlist</Link>
+            <Link to='/watchlist'>Watchlist</Link>
           </ListItem>
         </MenuList>
       </Menu>

@@ -7,9 +7,6 @@ export const Nav = styled.nav`
   align-items: center;
   padding: 0 1.5rem;
   background-color: ${({ theme }) => theme.colors.primaryCardBg};
-  /* position: sticky;
-  top: 0;
-  left: 0; */
   color: inherit;
   ${({ theme }) => theme.media.md} {
     justify-content: space-around;
@@ -59,7 +56,7 @@ export const ListItem = styled.li`
   }
   &:hover {
     a {
-      color: ${({ theme }) => theme.colors.brand};
+      color: ${({ theme }) => theme.colors.primaryText};
       --d: 100%;
     }
   }

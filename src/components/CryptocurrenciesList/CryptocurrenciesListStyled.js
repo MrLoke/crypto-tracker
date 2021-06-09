@@ -4,6 +4,9 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: sticky;
+  top: 0;
+  left: 0;
 `
 
 export const CoinNav = styled.ul`
@@ -12,9 +15,6 @@ export const CoinNav = styled.ul`
   justify-content: space-around;
   color: ${({ theme }) => theme.colors.white};
   padding: 1rem 0;
-  position: sticky;
-  top: 0;
-  left: 0;
   background-color: ${({ theme }) => theme.colors.primary};
 `
 

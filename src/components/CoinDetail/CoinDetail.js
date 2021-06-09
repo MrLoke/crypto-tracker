@@ -1,9 +1,11 @@
 import { AiOutlineCaretUp } from 'react-icons/ai'
 import { AiOutlineCaretDown } from 'react-icons/ai'
 import { AiOutlineStar } from 'react-icons/ai'
+import { AiFillStar } from 'react-icons/ai'
 import { useAppContext } from 'context/AppContext'
 import {
   Container,
+  AddCoinBtn,
   Rank,
   CoinImg,
   CoinInfo,
@@ -11,12 +13,29 @@ import {
 } from './CoinDetailStyled'
 import { Link } from 'react-router-dom'
 
-const CoinDetail = ({ coin }) => {
-  const { currency } = useAppContext()
+const CoinDetail = ({ coin, notifyAdd, notifyDelete }) => {
+  const { watchList, currency, handleAddCoin, handleRemoveCoin } =
+    useAppContext()
 
   return (
     <Container key={coin.id}>
-      <AiOutlineStar size='2rem' />
+      {watchList.includes(coin.id) ? (
+        <AddCoinBtn
+          onClick={() => {
+            handleRemoveCoin(coin.id)
+            notifyDelete(coin.name)
+          }}>
+          <AiFillStar size='2rem' />
+        </AddCoinBtn>
+      ) : (
+        <AddCoinBtn
+          onClick={() => {
+            handleAddCoin(coin.id)
+            notifyAdd(coin.name)
+          }}>
+          <AiOutlineStar size='2rem' />
+        </AddCoinBtn>
+      )}
       <Rank>{coin.market_cap_rank}</Rank>
       <CoinImg src={coin.image} alt='' width='60' height='60' />
       <CoinInfo>

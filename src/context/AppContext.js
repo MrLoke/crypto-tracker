@@ -1,31 +1,4 @@
-import {
-  useState,
-  useEffect,
-  useContext,
-  createContext,
-  useReducer,
-} from 'react'
-
-// const CurrencyReducer = (state, action) => {
-//   switch (action.type) {
-//     case 'DELETE_TODO':
-//       return {
-//         ...state,
-//         todos: state.todos.filter((todo) => todo.id !== action.payload),
-//       }
-//     case 'ADD_TODO':
-//       return {
-//         ...state,
-//         todos: [action.payload, ...state.todos],
-//       }
-//     default:
-//       return state
-//   }
-// }
-
-const initialState = {
-  todos: [],
-}
+import { useState, useEffect, useContext, createContext } from 'react'
 
 const AppContext = createContext()
 
@@ -35,23 +8,38 @@ export const AppCtxProvider = ({ children }) => {
   const [currency, setCurrency] = useState(
     () => localStorage.getItem('currency') || 'usd' // useState lazy initialization trick
   )
+  const [watchList, setWatchList] = useState(
+    () => localStorage.getItem('watchList')?.split(',') || []
+  )
 
   useEffect(() => {
     localStorage.setItem('currency', currency)
-  }, [currency])
+    localStorage.setItem('watchList', watchList)
+  }, [currency, watchList])
 
   const toggleCurrency = (currentCurrency) => {
     setCurrency(currentCurrency)
   }
 
+  const handleAddCoin = (coin) => {
+    if (watchList.indexOf(coin) === -1) {
+      setWatchList([...watchList, coin])
+    }
+  }
+
+  const handleRemoveCoin = (coin) => {
+    setWatchList(watchList.filter((el) => el !== coin))
+  }
+
   const value = {
+    watchList,
+    handleAddCoin,
+    handleRemoveCoin,
     currency,
     toggleCurrency,
   }
 
-  return (
-    <AppContext.Provider value={value}>{children}</AppContext.Provider>
-  )
+  return <AppContext.Provider value={value}>{children}</AppContext.Provider>
 }
 
 export const useAppContext = () => {

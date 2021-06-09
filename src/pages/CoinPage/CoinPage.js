@@ -23,6 +23,8 @@ const CoinPage = () => {
   }
 
   useEffect(() => {
+    // Why i don't use useQueries for multiple async api call ?!
+    // I have some issues with it... unlucky XD
     const fetchData = async () => {
       setIsLoading(true)
       const [day, week, year, detail] = await Promise.all([
@@ -67,7 +69,6 @@ const CoinPage = () => {
     <>
       {!isLoading ? (
         <>
-          {console.log(coinData)}
           <CoinDataHeader data={coinData.detail} />
           <Container>
             <HistoryChart data={coinData} />

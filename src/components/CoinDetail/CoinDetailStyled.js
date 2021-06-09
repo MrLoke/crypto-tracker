@@ -14,6 +14,14 @@ export const Container = styled.li`
   }
 `
 
+export const AddCoinBtn = styled.button`
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.primaryText};
+`
+
 export const Rank = styled.span`
   margin: 0 1.5rem;
 `

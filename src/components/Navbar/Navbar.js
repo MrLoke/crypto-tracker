@@ -1,12 +1,9 @@
 import MobileMenu from 'components/MobileMenu/MobileMenu'
 import ThemeSwitcher from 'components/ThemeSwitcher/ThemeSwitcher'
-import { useAppContext } from 'context/AppContext'
 import { Link } from 'react-router-dom'
 import { Nav, AppHeader, Menu, MenuList, ListItem } from './NavbarStyled'
 
 const Navbar = () => {
-  const { currency, toggleCurrency } = useAppContext()
-
   return (
     <Nav>
       <MobileMenu />
@@ -29,12 +26,6 @@ const Navbar = () => {
           </ListItem>
         </MenuList>
       </Menu>
-      <div>
-        <span>{currency.toUpperCase()}</span>
-        <button onClick={() => toggleCurrency('usd')}>usd</button>
-        <button onClick={() => toggleCurrency('eur')}>eur</button>
-        <button onClick={() => toggleCurrency('pln')}>pln</button>
-      </div>
       <ThemeSwitcher />
     </Nav>
   )

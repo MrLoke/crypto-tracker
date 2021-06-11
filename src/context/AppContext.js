@@ -2,8 +2,6 @@ import { useState, useEffect, useContext, createContext } from 'react'
 
 const AppContext = createContext()
 
-const currencies = ['usd', 'eur', 'pln']
-
 export const AppCtxProvider = ({ children }) => {
   const [currency, setCurrency] = useState(
     () => localStorage.getItem('currency') || 'usd' // useState lazy initialization trick

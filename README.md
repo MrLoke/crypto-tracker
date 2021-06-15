@@ -1,6 +1,6 @@
 # Cryptocurrency price tracker
 
-[LIVE DEMO](https://choosealicense.com/licenses/mit/)
+## [LIVE DEMO](zen-leakey-1bc670.netlify.app)
 
 ## Features
 

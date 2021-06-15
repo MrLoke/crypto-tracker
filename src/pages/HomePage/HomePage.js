@@ -4,9 +4,9 @@ import CoinDetail from 'components/CoinDetail/CoinDetail'
 import CryptocurrenciesList from 'components/CryptocurrenciesList/CryptocurrenciesList'
 import { useQuery, useMutation, useQueryClient } from 'react-query'
 import { useAppContext } from 'context/AppContext'
-import { Container, Select } from './HomePageStyled'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Container, Select, PaginationContainer,PaginationBtn } from './HomePageStyled'
 
 const fetchCryptocurrencies = async (page = 1, currency) => {
   const response = await axios(
@@ -120,22 +120,24 @@ const HomePage = () => {
           ))}
         </>
       )}
-      <button
-        onClick={() => setPage((old) => Math.max(old - 1, 0))}
-        disabled={page === 0}>
-        Previous Page
-      </button>{' '}
-      <span>Current Page: {page}</span>
-      <button
-        onClick={() => {
-          if (!isPreviousData) {
-            setPage((old) => old + 1)
-          }
-        }}
-        disabled={isPreviousData}>
-        Next Page
-      </button>
-      {isFetching ? <span> Loading...</span> : null}{' '}
+      <PaginationContainer>
+        <PaginationBtn
+          onClick={() => setPage((old) => Math.max(old - 1, 0))}
+          disabled={page === 0}>
+          Prev
+        </PaginationBtn>{' '}
+        <span>{page}</span>
+        <PaginationBtn
+          onClick={() => {
+            if (!isPreviousData) {
+              setPage((old) => old + 1)
+            }
+          }}
+          disabled={isPreviousData}>
+          Next
+        </PaginationBtn>
+        {isFetching ? <span> Loading...</span> : null}{' '}
+      </PaginationContainer>
     </Container>
   )
 }

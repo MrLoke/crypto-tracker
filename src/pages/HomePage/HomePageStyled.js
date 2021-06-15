@@ -10,3 +10,22 @@ export const Select = styled.select`
   margin-bottom: 2rem;
   cursor: pointer;
 `
+
+export const PaginationContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+`
+
+export const PaginationBtn = styled.button`
+  padding: 1rem 1.5rem;
+  background-color: ${({ theme }) => theme.colors.brand};
+  border: none;
+  outline: none;
+  border-radius: ${({ theme }) => theme.utils.bigRadius};
+  color: ${({ theme }) => theme.colors.white};
+  font-size: ${({ theme }) => theme.size.s};
+  cursor: pointer;
+  margin: 2rem 1rem;
+`

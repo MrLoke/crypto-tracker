@@ -63,7 +63,7 @@ const CoinPage = () => {
       setIsLoading(false)
     }
     fetchData()
-  }, [])
+  }, [id, currency])
 
   return (
     <>

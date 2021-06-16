@@ -1,6 +1,6 @@
 # Cryptocurrency price tracker
 
-## [LIVE DEMO](zen-leakey-1bc670.netlify.app)
+## [https://cryptos-tracker.netlify.app/](https://cryptos-tracker.netlify.app/)
 
 ## Features
 

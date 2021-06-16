@@ -7,7 +7,7 @@ const ThemeContext = createContext()
 
 export const ThemeModeProvider = ({ children }) => {
   const [themeMode, setThemeMode] = useState(
-    () => localStorage.getItem('theme') || 'lightTheme' // useState lazy initialization trick
+    () => localStorage.getItem('theme') || 'darkTheme' // useState lazy initialization trick
   )
 
   useEffect(() => {

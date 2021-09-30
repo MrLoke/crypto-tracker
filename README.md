@@ -1,4 +1,5 @@
 # Cryptocurrency price tracker
+## Educational project created by me, its not tutorial copy.
 
 ## [https://cryptos-tracker.netlify.app/](https://cryptos-tracker.netlify.app/)
 
